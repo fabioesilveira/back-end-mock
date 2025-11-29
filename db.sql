@@ -28,9 +28,11 @@ CREATE TABLE sales (
     `items` JSON NOT NULL,
     `total` DECIMAL(8, 2) NOT NULL,
 
-    FOREIGN KEY(user_id) REFERENCES users(id)
-
-)
+    CONSTRAINT fk_sales_users
+      FOREIGN KEY (user_id)
+      REFERENCES users(id)
+      ON DELETE CASCADE
+);
 
 
 

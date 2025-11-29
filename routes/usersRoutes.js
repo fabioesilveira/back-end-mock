@@ -66,6 +66,20 @@ router.put("/:id", async (req, res) => {
     return res.json(result);
 });
 
+router.delete("/removeUser", async (req, res) => {
+    const { email, password } = req.body;
+
+    const [result] = await connection.execute(
+        `
+         DELETE FROM users
+         WHERE email = ?
+         AND password = ?
+        `,[email, password]
+    );
+
+    return res.json(result)
+});
+
 router.delete("/:id", async (req, res) => {
     const { id } = req.params;
     const [result] = await connection.execute(

@@ -26,15 +26,28 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  try {
     const { name, email, orderNumber, phone, subject, message } = req.body;
 
     const [result] = await connection.execute(
-        `INSERT INTO contactUs (name, email, orderNumber, phone, subject, message)
-    VALUES (?, ?, ?, ?, ?, ?)`,
-        [name, email, orderNumber, phone, subject, message]
+      `INSERT INTO contactUs (name, email, orderNumber, phone, subject, message)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      [name, email, orderNumber, phone, subject, message]
     );
 
-    return res.json(result);
+    return res.status(201).json({
+      id: result.insertId,
+      name,
+      email,
+      orderNumber,
+      phone,
+      subject,
+      message,
+    });
+  } catch (err) {
+    console.error("CONTACT-US ERROR:", err);
+    return res.status(500).json({ msg: "Internal server error" });
+  }
 });
 
 module.exports = router;

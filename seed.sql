@@ -30,3 +30,6 @@ INSERT INTO products (name, price, category, image, description) VALUES
 
 INSERT INTO sales(status, items, total, user_id) 
 VALUES('pendent', '{"name": "Strawberry Sundae", "quantity": 2, "price": 3}', 6.00, 1)
+
+INSERT INTO `contactUs`(name, email, orderNumber, phone, subject, message)
+VALUE('Fabio', "fabio@email.com", "456789", "4245421073", "Order not delivered", "i need to know about my order")

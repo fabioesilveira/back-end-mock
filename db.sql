@@ -35,13 +35,17 @@ CREATE TABLE sales (
 );
 
 CREATE TABLE contactUs (
-    `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `name` VARCHAR(255) NOT NULL,
-    `email` VARCHAR(255) NOT NULL,
-    `orderNumber` INT DEFAULT 0,
-    `phone` VARCHAR(255) DEFAULT NULL,
-    `subject` VARCHAR(255) NOT NULL,
-    `message` VARCHAR(300) 
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  orderNumber INT DEFAULT 0,
+  phone VARCHAR(255),
+  subject VARCHAR(255) NOT NULL,
+  message VARCHAR(300),
+
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  replied TINYINT(1) NOT NULL DEFAULT 0,
+  replied_at DATETIME NULL
 );
 
 

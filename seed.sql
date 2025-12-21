@@ -2,7 +2,7 @@
 USE db_fastFuel;
 
 INSERT INTO users (fullName, phone, email, password, type)
-VALUES ('Jose S.', '(11) 9999-8888', 'jose@admim.com', '123456', 'normal' ),
+VALUES ('adm', '(11) 9999-8888', 'fast-fuel@admin.com', 'adminFF', 'admin' ),
 ('Jose M.', '(11) 4421-8888', 'jose@email.com', '123456', 'normal');
 
 INSERT INTO products (name, price, category, image, description) VALUES
@@ -29,7 +29,13 @@ INSERT INTO products (name, price, category, image, description) VALUES
 ('Carrot Cake / 420kcal', 4.00, 'desserts', 'https://static.vecteezy.com/system/resources/thumbnails/049/390/139/small_2x/delicious-carrot-cake-slice-with-cream-cheese-frosting-and-pecan-toppings-transparent-background-png.png', 'Moist and spiced with a hint of cinnamon, layered with smooth cream cheese frosting, perfectly irresistible.');
 
 INSERT INTO sales(status, items, total, user_id) 
-VALUES('pendent', '{"name": "Strawberry Sundae", "quantity": 2, "price": 3}', 6.00, 1)
+VALUES ('pendent', '{"name": "Strawberry Sundae", "quantity": 2, "price": 3}', 6.00, 1);
 
-INSERT INTO `contactUs`(name, email, orderNumber, phone, subject, message)
-VALUE('Fabio', "fabio@email.com", "456789", "4245421073", "Order not delivered", "i need to know about my order")
+
+INSERT INTO contactUs
+(name, email, orderNumber, phone, subject, message)
+VALUES
+('Fabio', 'fabio@email.com', 456789, '4245421073', 'Order not delivered', 'I need to know about my order'),
+('Maria Silva', 'maria@gmail.com', 0, '5551112222', 'Payment issue', 'My card was charged twice'),
+('John Doe', 'john@yahoo.com', 1234, NULL, 'Order delay', 'My order is taking too long');
+

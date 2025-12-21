@@ -32,10 +32,16 @@ INSERT INTO sales(status, items, total, user_id)
 VALUES ('pendent', '{"name": "Strawberry Sundae", "quantity": 2, "price": 3}', 6.00, 1);
 
 
-INSERT INTO contactUs
-(name, email, orderNumber, phone, subject, message)
+INSERT INTO contactUs (name, email, orderNumber, phone, subject, message, replied, replied_at)
 VALUES
-('Fabio', 'fabio@email.com', 456789, '4245421073', 'Order not delivered', 'I need to know about my order'),
-('Maria Silva', 'maria@gmail.com', 0, '5551112222', 'Payment issue', 'My card was charged twice'),
-('John Doe', 'john@yahoo.com', 1234, NULL, 'Order delay', 'My order is taking too long');
+('Fabio','fabio@email.com',456789,'4245421073','Order not delivered','I need to know about my order, it was supposed to arrive yesterday.',0,NULL),
+('Maria Silva','maria@gmail.com',0,'5551112222','Payment issue','My card was charged twice and I only placed one order.',0,NULL),
+('John Doe','john@yahoo.com',1234,NULL,'Order delay','My order is taking too long, can you check what is going on?',0,NULL),
+('Ana Costa','ana.costa@gmail.com',99887,'5553339999','Wrong item','I received a different burger than the one I ordered.',0,NULL),
+('Lucas Pereira','lucas.p@gmail.com',0,'5558887777','App issue','The app crashes every time I try to checkout.',0,NULL),
+('Mark Johnson','mark.j@gmail.com',556677,'5554441111','Missing item','One item was missing from my order.',1,'2025-12-19 14:32:00'),
+('Sofia Martinez','sofia@gmail.com',223344,NULL,'Refund request','I would like a refund for my last order.',1,'2025-12-18 10:15:00'),
+('Carlos Mendes','carlos.m@gmail.com',778899,'5552223333','Late delivery','The delivery arrived very late and the food was cold.',1,'2025-12-20 09:48:00'),
+('Emily Brown','emily.brown@yahoo.com',0,'5559990000','Account problem','I cannot log into my account after resetting my password.',1,'2025-12-17 16:05:00'),
+('Rafael Lima','rafael.lima@gmail.com',445566,NULL,'Promo code','The promo code did not apply at checkout.',1,'2025-12-16 11:22:00');
 
